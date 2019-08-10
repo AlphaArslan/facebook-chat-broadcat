@@ -3,9 +3,10 @@ import fbchat
 from getpass import getpass
 from fbchat.models import *
 import warnings
+import time
 
 ########################### control panel
-FRIENDS_NUM = 5
+FRIENDS_NUM =
 blocklist = [
 "Mahammad Abul-Soad",
 "Ahmed Abas"
@@ -26,3 +27,5 @@ if __name__ == '__main__':
             if users[i].name not in blocklist:
                 print("Sending Message to user {}/{}\n".format(i+1, FRIENDS_NUM))
                 client.send(Message(text=msg), thread_id=users[i].uid, thread_type=ThreadType.USER)
+                # cooldown and avoid being blocked by facebook
+                time.sleep(2)
